@@ -1,0 +1,37 @@
+.card{
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+}
+.card-body{
+    align-items: flex-start;
+    justify-content: space-between;
+    border: none;
+}
+
+.imgDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px 0;
+}
+.imgDiv>p:hover{
+    cursor: pointer;
+}
+.imgDiv>img{
+    border-radius:"50%";
+    width: 90%;
+    height: 200px;
+}
+.contentDiv{
+    padding-bottom: 40px;
+}
+.bookAppointmentBtn{
+    width: fit-content;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #1e45ac;
+}

@@ -1,0 +1,12 @@
+.addAppointmentBtn{
+    padding: 10px 20px;
+    background-color: #1e45ac;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+@media (max-width:550px){
+    span{
+        display: none;
+    }
+}

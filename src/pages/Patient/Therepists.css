@@ -1,0 +1,10 @@
+.imgDiv{
+    width: 250px;
+}
+.imgDiv img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* max-height: 250px; */
+    max-width: 250px;
+    border-radius: 50%;
+}

@@ -1,0 +1,91 @@
+/* .month{
+    display: none;
+}
+.week{
+    display: none;
+} */
+.accordian{
+    width: 100%;
+    margin-top: 20px;
+    overflow: visible;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.activity-content{
+    padding: 10px;
+    overflow: auto;
+}
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    border: none;
+    background-color: #f5f5f7;
+    border-radius: 7px;
+    margin: 3px 0;
+}
+.button-level2{
+    width: 100%;
+}
+.button-level3{
+    width: 100%;
+}
+.activity{
+    font-weight: bold;
+    font-size: 12px;
+}
+.day{
+    text-align: center;
+}
+.trial1, .trial2{
+    font-size: 13px;
+    text-align: center;
+}
+select{
+    width: 35px;
+}
+.sessionRecordingBtn{
+    padding: 8px 25px;
+    border: none;
+    background-color: #00bf63;
+    color: #fff;
+    border-radius: 4px;
+}
+.tipsDiv{
+    margin: 10px 0;
+}
+.tip{
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    margin-bottom: 5px;
+}
+.tip input{
+    border-radius: 4px;
+    padding:  3px 5px;
+    border: 1px solid grey;
+    outline: none;
+    width: 80%;
+}
+
+.uploadVideoDiv{
+    margin: 10px 0;
+}
+.uploadVideoDiv>h5>span{
+    font-size: 14px;
+}
+.uploadVideoDiv>h6{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+  input[type=file] {
+    color: #444;
+    margin: 2px;
+  }
+
+ 
