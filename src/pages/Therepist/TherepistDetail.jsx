@@ -13,6 +13,7 @@ import { FaStar } from "react-icons/fa";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
+import { Navigate, useNavigate } from 'react-router-dom';
 // import toast
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -50,7 +51,9 @@ const styles = {
         padding: 10,
         margin: "20px 0",
         minHeight: 100,
-        width: 300
+        width: 300,
+        resize:'none',
+        outline:"none"
     },
     button: {
         border: "none",
@@ -67,6 +70,8 @@ export default function Therepistdetail(props) {
     const [hoverValue, setHoverValue] = useState(undefined);
     const [feedbackForm, setFeedbackForm] = useState(false);
     const stars = Array(5).fill(0);
+
+    const navigate  = useNavigate();
 
     const handleClick = (value) => {
         setCurrentValue(value);
@@ -105,8 +110,13 @@ export default function Therepistdetail(props) {
     });
     // const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
     function goToBack() {
-        window.location.href = "/patient/appointment";
+        {props.admin?
+            navigate("/admin/therepists"):
+            navigate("/patient/therepists")
+        }
+        
     }
+    // window.location.href = "admin/patient/therepists";
 
     return (
         <Box
@@ -126,12 +136,12 @@ export default function Therepistdetail(props) {
             <Container sx={{
                 mt: 4,
                 mb: 4,
-                paddingLeft: "0px"
+                paddingLeft: "0px",
             }}>
                 <Grid item sx={{
                     paddingLeft: "0px"
                 }}>
-                    <p style={{ fontWeight: "bold" }} onClick={goToBack}><KeyboardBackspaceOutlinedIcon /> Back to list</p>
+                    <p style={{ fontWeight: "bold", cursor:"pointer" }} onClick={goToBack}><KeyboardBackspaceOutlinedIcon /> Back to list</p>
                 </Grid>
             </Container>
             <Container maxWidth="lg" sx={{
@@ -145,16 +155,16 @@ export default function Therepistdetail(props) {
                     alignItems: "center",
                     padding: "10px"
                 }}>
-                    <Grid item xs={2}>
+                    <Grid item xs={5} sm={5} md={3} lg={3} xl={3}>
                         <img className='patient-detail-img' src={require('../../images/person.jpg')} alt='personImg' />
                     </Grid>
-                    <Grid item xs={5}>
+                    <Grid item xs={7} sm={6} md={5} lg={3} xl={3}>
                         <h6><strong>Abhsihek patil</strong></h6>
                         <p>London, UK ( GMT+05:30 )</p>
                         <p style={{ margin: "0" }}>10+ years of Experince</p>
                     </Grid>
                        {!props.admin&&
-                    <Grid item className='bookAppointmentBtnSection' style={{ display: "flex", flexDirection: "column", alignItems: "center", }}>
+                    <Grid item xs={12} sm={12} md={4} lg={6} xl={6} className='bookAppointmentBtnSection' style={{ display: "flex", flexDirection: "column", alignItems: "center", }}>
                      
                        <p style={{ marginBottom: "5px" }}>Available Today</p>
                         <button {...getTriggerProps()} className='bookAppointmentBtn'>Book an appointment</button>
@@ -162,17 +172,19 @@ export default function Therepistdetail(props) {
                         <Modal {...modalProps}>
 
                             <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
-                                <Grid container spacing={2} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <Grid  container spacing={2} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
-                                    <Grid item xs={12} md={12} lg={8}>
+                                    <Grid className='appointmentContainer'
+                                        item xs={12} md={12} lg={8}>
 
-                                        <Paper
+                                        <Paper 
 
                                             sx={{
                                                 p: 2,
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 height: 'auto',
+                                                overflowX:"scroll"
                                             }}
                                         >
                                             <h5>Select Slot</h5>
@@ -239,7 +251,8 @@ export default function Therepistdetail(props) {
                 </Grid>
 
                 <Grid sx={{
-                    mt: 3
+                    mt: 3,
+                    padding:"15px"
                 }}>
                     <h5 style={{ fontWeight: "bold" }}>Bio</h5>
                     <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
@@ -263,10 +276,11 @@ export default function Therepistdetail(props) {
                 </Grid>
                 {!props.admin&&
                 <Grid sx={{
-                    mt: 3
+                    mt: 1,
+                    padding:"0 15px"
                 }}>
                     <button onClick={toggleFeebackForm} style={{ backgroundColor: "#1e45ac", color: "#fff", borderRadius: "5px", padding: "8px 25px", border: "none" }}>Give Feedback</button>
-                    {feedbackForm && <div style={styles.container}>
+                    {feedbackForm && <div  style={styles.container}>
                         <div style={styles.div}>
                             <h4> Feedback </h4>
                             <div style={styles.stars}>
@@ -302,7 +316,8 @@ export default function Therepistdetail(props) {
                 </Grid>
                 }
                 <Grid sx={{
-                    mt: 4
+                    mt: 4,
+                    padding:"0 15px"
                 }}>
                     <h5 style={{ fontWeight: "bold" }}>Reviews</h5>
                     <Stack direction="row" spacing={2} mt={3}>

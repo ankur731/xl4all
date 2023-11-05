@@ -9,7 +9,7 @@ import { Chart as ChartJS } from 'chart.js/auto'
 
 function Chart(props) {
   return (
-    <div style={{width:"100%", height:"100%", minHeight:"250px"}}>
+    <div style={{width:"95%", height:"100%", minHeight:"250px"}}>
        <Line style={{minHeight:"220px"}}   data={props.data} options={props.options}/>
     </div>
   )

@@ -1,0 +1,19 @@
+.top-stats{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 15px;
+}
+.app-card{
+    padding: 10px 15px;
+    display: flex;
+    gap: 0 25px;
+    /* justify-content: center; */
+}
+.app-card-left{
+    display: flex;
+    gap: 0 15px;
+}
+.right-bottom{
+    display: flex;
+    gap: 0 15px;
+}

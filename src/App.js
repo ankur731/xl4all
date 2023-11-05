@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import SignIn from './components/Auth/Login/Login';
-import SignUp from './components/Auth/Signup/Logout';
+import SignUp from './components/Auth/Signup/signup';
 import Forgot from './components/Auth/Forgot/Forgot';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,20 +22,25 @@ import Progress from './pages/Patient/Progress';
 import TherepistProfile from './pages/Therepist/Profile';
 import PatientProfile from './pages/Patient/PatientProfile';
 import AdminProfile from './pages/Admin/Profile';
+import TherepistSignUp from './components/Auth/Signup/TherepistSignUp';
+import LandingPage from './pages/home/LandingPage';
+import DashboardSkeleton from './pages/Therepist/DashboardSkeleton';
 function App() {
   return (
     <div className="App">
       <Router>
       <Routes>
+        <Route path="/" element={<LandingPage />}/>
         <Route path="/signin" element={<SignIn />}/>
-        <Route path="/signup" element={<SignUp />}/>
-        <Route path="/forgot" element={<Forgot />}/>
+        <Route path="/user/signup" element={<SignUp />}/>
+        <Route path="/therepist/signup" element={<TherepistSignUp />}/>
+        {/* <Route path="/user/forgot" element={<Forgot />}/> */}
         <Route path="/therepist" element={<Template  pov="therepist" page={<TherepistDashboard/>}/>} />
         <Route path="/therepist/patients" element={<Template  pov="therepist"  page={<Patients />}/>} />
         <Route path="/therepist/patient/patient-detail" element={<Template pov="therepist" page={<Patientdetail />}/>} />
         <Route path="/therepist/calender" element={<Template  pov="therepist" page={<TherepistCalender />}/>} />
         <Route path="/therepist/appointment" element={<Template pov="therepist" page={<TherepistAppointment />}/>} />
-        <Route path="/therepist/enquiry" element={<Template pov="therepist" page={<Enquiry />}/>} />
+        <Route path="/therepist/enquiry" element={<Template pov="therepist" page={<Enquiry pov="therepist"/>}/>} />
         <Route path="/therepist/profile" element={<Template pov="therepist" page={<TherepistProfile />}/>} />
 
 
@@ -45,6 +50,7 @@ function App() {
         <Route path="/patient/calender" element={<Template pov="patient" page={<PatientCalender />}/>} />
         <Route path="/patient/progress" element={<Template pov="patient" page={<Progress />}/>} />
         <Route path="/patient/profile" element={<Template pov="patient" page={<PatientProfile />}/>} />
+
 
         <Route path="/admin" element={<Template pov="admin" page={<AdminDashboard />} />}/>
         <Route path="/admin/therepists" element={<Template pov="admin" page={<Therepists admin="true"/>}/>} />

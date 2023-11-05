@@ -26,9 +26,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMemo } from 'react';
 import { useTheme } from 'styled-components';
+import { Navigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -109,6 +110,7 @@ const defaultTheme = createTheme({
 });
 
 export default function Template(props) {
+    const navigate = useNavigate();
     const [open, setOpen] = React.useState(window.innerWidth > 1160);
     // const drawer = useMemo(()=> setOpen(open), [open]);
     const theme = useTheme()
@@ -116,14 +118,17 @@ export default function Template(props) {
 
         setOpen(!open);
     };
+    const logout = () => {
+        navigate("/")
+    }
 
     function sendtoprofile() {
         if (props.pov === "therepist") {
-            window.location.href = "/therepist/profile";
+            navigate("/therepist/profile")
         } else if (props.pov === "patient") {
-            window.location.href = "/patient/profile";
+            navigate("/patient/profile")
         } else {
-            window.location.href = "/admin/profile";
+            navigate("/admin/profile")
         }
     }
 
@@ -170,8 +175,10 @@ export default function Template(props) {
                                  }}
 
                         >
-                            {props.pov === "therepist" ?
-                                "Hi, Dr. Samantha Aggarwal (Therepist)" : "Hi Rohit Sharma (User)"}
+                            {props.pov === "therepist"&&
+                                "Hi, Dr. Samantha Aggarwal (Therepist)" }
+                                {props.pov==="patient"&&"Hi Rohit Sharma (User)"}
+                                {props.pov==="admin"&&"Hi Admin"}
                         </Typography>
 
                         <IconButton color="inherit" sx={{
@@ -202,7 +209,7 @@ export default function Template(props) {
                                         <Menu {...bindMenu(popupState)}>
 
                                             <MenuItem onClick={sendtoprofile}><PersonOutlinedIcon /> Profile</MenuItem>
-                                            <MenuItem onClick={popupState.close}><LogoutOutlinedIcon /> Logout</MenuItem>
+                                            <MenuItem onClick={logout}><LogoutOutlinedIcon /> Logout</MenuItem>
                                         </Menu>
                                     </React.Fragment>
                                 )}
@@ -244,7 +251,7 @@ export default function Template(props) {
                         overflowX:"hidden"
 
                     }}>
-                        <Sideitems />
+                        <Sideitems pov={props.pov}/>
                     </List>
                 </Drawer>
 

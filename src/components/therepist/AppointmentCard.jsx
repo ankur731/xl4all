@@ -6,8 +6,11 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import ActivityPage from '../ActivityPage';
 import { toast } from 'react-toastify';
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 function AppointmentCard(props) {
+  const navigate = useNavigate();
 
   const [action, setAction] = useState(false);
   const [activity, setActivity] = useState(false);
@@ -16,8 +19,11 @@ function AppointmentCard(props) {
       setAction(!action);
     }
     else {
-      if(props.type==="therepist") {
-        window.location.href="/patient/progress";
+      // if(props.appointmentPage) {
+      //   setActivity(!activity);
+      // }
+       if(props.type==="therepist") {
+        navigate("/therepist/patient/patient-detail");
       }
       else{
         setActivity(!activity);
@@ -29,17 +35,20 @@ function AppointmentCard(props) {
   function appointmentCardClicked() {
     var type;
     if(props.type==="therepist"){
-        type = "patient/therepist/therepist-detail";
+      navigate("/patient/therepist/therepist-detail")
+        // type = "patient/therepist/therepist-detail";
       }
     
     else {
-      type = "therepist/patient/patient-detail";
+      navigate("/therepist/patient/patient-detail")
+
+      // type = "therepist/patient/patient-detail";
     }
-    window.location.href=`/${type}`;
+    // window.location.href=`/${type}`;
   }
   return (
 <>
-    <div className='row  appointmentCard' >
+    <div className='row  appointmentCard align-items-center' style={{padding:"0 10px"}}>
       <div className='col col-xs-12 col-sm-12  col-md-6  col-lg-5  imgContent' >
 
         <div className='therepistImgDiv' onClick={appointmentCardClicked}>
@@ -53,7 +62,7 @@ function AppointmentCard(props) {
         </div>
 
       </div>
-      <div className='col  col-xs-12 col-sm-12 col-md-5  col-lg-6 row btnGroup ' id='btngrp' >
+      <div className='col  col-xs-12 col-sm-12 col-md-5  col-lg-6 row btnGroup '  id='btngrp' >
           <div className="dateTime-btn col-12 ">
               <p><DateRangeIcon style={{fill:"#7457fb"}}/> 19 July 2023</p>
               <p><AccessTimeOutlinedIcon style={{fill:"#f27d58"}}/> 12:00 PM</p>

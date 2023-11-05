@@ -1,0 +1,36 @@
+.program-section{
+    width: 100%;
+     background-color: #fdf5f2;
+    position: relative;
+    padding: 0 ;
+}
+.program-section>svg{
+    width: 100%;
+    position: absolute;
+    top: -12vw;
+}
+.program{
+    position: relative;
+    z-index: 999999;
+    padding: 40px 15px;
+}
+.program>h1{
+    text-align: center;
+}
+.program-left>img{
+    width: 90%;
+}
+.program-right>h5{
+    font-weight: 300;
+    font-size: 22px;
+}
+@media (max-width:920px) {
+    .program-right>h5{
+        font-size: 19px;
+    }
+}
+@media (max-width:576px) {
+    .program-right>h5{
+        font-size: 17px;
+    }
+}

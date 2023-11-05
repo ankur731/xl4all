@@ -48,13 +48,16 @@ export default function SignIn() {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
+                        padding: "30px 20px",
+                        border: "1px solid #f5f5f7",
+                        borderRadius: "4px"
                     }}
                 >
                     <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                       Login, To Your Account
+                        Login, To Your Account
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
@@ -81,26 +84,35 @@ export default function SignIn() {
                             type="submit"
                             fullWidth
                             variant="contained"
-                           
-                            sx={{ mt: 3, mb: 2,}}
+
+                            sx={{ mt: 3, mb: 2, }}
                         >
-                           Log In
+                            Log In
                         </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="/admin/forgot" variant="body2">
-                                    Forgot password?
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="/admin/signup" variant="body2">
-                                    {"Don't have an account? Sign Up"}
-                                </Link>
-                            </Grid>
+
+                        <Grid container mt={1} style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                       <div className='row col-12'>
+                       <div >
+                            <input type='radio'/>
+                            <label>Patient</label>
+                        </div>
+                        <div>
+                            <input type='radio'/>
+                            <label>Therepist</label>
+                        </div>
+                       </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style={{ textTransform: "none" }}>
+                                    <img width="20px" syle={{ marginBottom: "3px", marginRight: "5px" }} alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                    Login with Google
+                                </a>
+                            </div>
+                        </div>
+                            
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
             </Container>
         </ThemeProvider>
     );

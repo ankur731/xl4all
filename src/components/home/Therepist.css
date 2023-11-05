@@ -1,0 +1,43 @@
+.therepist-section{
+    background-color: #fdf5f2;
+    padding: 0 15px;
+}
+.therepist-left>img{
+    width: 100%;
+    border-radius: 5px;
+}
+.therepist-right>p{
+    font-size: 24px;
+    text-align: left;
+    color: #353535;
+    text-align: justify;
+}
+
+.therepist-div>h1{
+    font-size: 48px;
+}
+@media (max-width:992px) {
+    .therepist-div>h1{
+        font-size: 36px;
+    }
+    .therepist-right>p{
+        padding-top: 15px;
+        font-size: 18px;
+        
+    }
+}
+@media (max-width:576px) {
+    .therepist-div>h1{
+        font-size: 28px;
+    }
+    .therepist-right>p{
+        font-size: 16px;
+        
+    }
+}
+.child-img-container{
+    width: 100%;
+}
+.child-img-container>img{
+    width: 100%;
+}

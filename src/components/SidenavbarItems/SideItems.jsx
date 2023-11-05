@@ -5,59 +5,74 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import React from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+const Sideitems = (props) => {
 
-const Sideitems = () => {
+    const navigate = useNavigate();
    
-    function gotohome(){
-        // console.log(window.loaction.pathname)
-        window.location.href="/therepist"
+    function gototherepist(){
+        navigate("/therepist")
     }
     function gotoappointment(){
-        window.location.href="/therepist/appointment"
+        navigate("/therepist/appointment")
     }
     function gotopatient(){
-        window.location.href="/therepist/patients"
+        navigate("/therepist/patients")
+
     }
     function gotocalender(){
-        window.location.href="/therepist/calender"
+        navigate("/therepist/calender")
+
     }
     function gotoenquiry(){
-        window.location.href="/therepist/enquiry"
+        navigate("/therepist/enquiry")
+
     }
 
     function patientsdashboard(){
-        window.location.href="/patient"
+        navigate("/patient")
+
     }
     function patientsappointment(){
-        window.location.href="/patient/therepists"
+        navigate("/patient/therepists")
+
     }
     function patientscalender(){
-        window.location.href="/patient/calender"
+        navigate("/patient/calender")
+
     }
     function patientsprogress(){
-        window.location.href="/patient/progress"
+        navigate("/patient/progress")
+
     }
     function adminDashboard(){
-        window.location.href="/admin"
+        navigate("/admin")
+
     }
     function adminTherepists(){
-        window.location.href="/admin/therepists"
+        navigate("/admin/therepists")
     }
     function adminPatients(){
-        window.location.href="/admin/patients"
+        navigate("/admin/patients")
+
     }
     function adminEnquiry(){
-        window.location.href="/admin/enquiry"
+        navigate("/admin/enquiry")
+
     }
  
     return (
-        <>
-            {/* <ListItemButton onClick={gotohome}>
+        <React.Fragment>
+       
+           {props.pov==="therepist"&& <>
+           <ListItemButton onClick={gototherepist}>
                 <ListItemIcon>
                     <HomeOutlinedIcon sx={{ color: '#fff' }}/>
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
             </ListItemButton>
+           
             <ListItemButton onClick={gotoappointment}>
                 <ListItemIcon>
                    <DateRangeOutlinedIcon sx={{ color: '#fff' }}/>
@@ -82,17 +97,17 @@ const Sideitems = () => {
                 </ListItemIcon>
                 <ListItemText primary="Enquiry" />
             </ListItemButton>
-            <ListItemButton >
-               
-               <ListItemText primary="Patient PoV" />
-           </ListItemButton> */}
-          
+   
+            </>
+            } 
+            {props.pov==="patient"&& <>
            <ListItemButton onClick={patientsdashboard}>
                <ListItemIcon>
                <HomeOutlinedIcon sx={{ color: '#fff' }}/>
                </ListItemIcon>
                <ListItemText primary="Dashboard" />
            </ListItemButton>
+    
            <ListItemButton onClick={patientsappointment}>
                <ListItemIcon>
                <PersonOutlinedIcon sx={{ color: '#fff' }}/>
@@ -111,28 +126,26 @@ const Sideitems = () => {
                </ListItemIcon>
                <ListItemText primary="My Progress" />
            </ListItemButton>
-
-
-            {/* <ListItemButton >
-               
-               <ListItemText primary="Admin PoV" />
-           </ListItemButton>
+   
+           </>
+            } 
+            {props.pov==="admin"&& <>
           
            <ListItemButton onClick={adminDashboard}>
-               <ListItemIcon>
-                  <CalendarTodayIcon sx={{ color: '#fff' }}/>
-               </ListItemIcon>
+           <ListItemIcon>
+                    <HomeOutlinedIcon sx={{ color: '#fff' }}/>
+                </ListItemIcon>
                <ListItemText primary="Dashboard" />
            </ListItemButton>
            <ListItemButton onClick={adminTherepists}>
-               <ListItemIcon>
-                  <CalendarTodayIcon sx={{ color: '#fff' }}/>
+           <ListItemIcon>
+               <PersonOutlinedIcon sx={{ color: '#fff' }}/>
                </ListItemIcon>
                <ListItemText primary="Therepist" />
            </ListItemButton>
            <ListItemButton onClick={adminPatients}>
-               <ListItemIcon>
-                  <CalendarTodayIcon sx={{ color: '#fff' }}/>
+           <ListItemIcon>
+               <PersonOutlinedIcon sx={{ color: '#fff' }}/>
                </ListItemIcon>
                <ListItemText primary="Patient" />
            </ListItemButton>
@@ -141,8 +154,10 @@ const Sideitems = () => {
                   <CalendarTodayIcon sx={{ color: '#fff' }}/>
                </ListItemIcon>
                <ListItemText primary="Enquiries" />
-           </ListItemButton> */}
-        </>
+           </ListItemButton> 
+           </>
+            } 
+    </React.Fragment>
     );
 };
 

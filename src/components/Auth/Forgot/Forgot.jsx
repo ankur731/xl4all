@@ -92,17 +92,7 @@ export default function Forgot() {
                                 <Typography sx={{ mt: 2, mb: 1, display: activeStep === 0 ? 'block' : 'none', }}>
 
                                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                                        <TextField
-                                            margin="normal"
-                                            required
-                                            fullWidth
-                                            id="email"
-                                            label="User Name"
-                                            name="username"
-                                            autoComplete="off"
-                                            autoFocus
-                                            type='text'
-                                        />
+                                        
                                         <TextField
                                             margin="normal"
                                             required
@@ -118,16 +108,7 @@ export default function Forgot() {
 
                                 <Typography sx={{ mt: 2, mb: 1, display: activeStep === 1 ? 'block' : 'none', }}>
                                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                                        <TextField
-                                            margin="normal"
-                                            required
-                                            fullWidth
-                                            id="email"
-                                            label="Phone Number"
-                                            name="phonenumber"
-                                            autoComplete="off"
-                                            type='number'
-                                        />
+                                       
                                         <TextField
                                             margin="normal"
                                             required

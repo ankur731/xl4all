@@ -8,6 +8,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import Chart from '../../components/patient/Chart';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import DashboardSkeleton from '../Therepist/DashboardSkeleton';
 
 
 
@@ -61,6 +64,14 @@ const data = {
   };
 
 export default function PatientDashboard() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      setTimeout(() => {
+          setLoading(false)
+      },2500)
+  })
  
    
     return ( 
@@ -75,7 +86,7 @@ export default function PatientDashboard() {
                     }}
                 >
                     <Toolbar />
-                  
+                  {loading?<DashboardSkeleton patient='true'/>:<>
                     <Container maxWidth="xxl" sx={{ mt: 4 }}>
                         <h5>Upcoming appointment</h5>
                         <Grid container spacing={1} mt={2} sx={{
@@ -119,6 +130,7 @@ export default function PatientDashboard() {
                                </div>
                                </div>
                            
+                              
                                <Chart data={data} options={options}/>
                             </Grid>
                          
@@ -126,7 +138,7 @@ export default function PatientDashboard() {
                         </Grid>
 
                     </Container>
-
+</>}
                 </Box>
          
     );

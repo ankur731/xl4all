@@ -63,6 +63,7 @@ export default function Patientdetail(props) {
                         flexGrow: 1,
                         height: '100vh',
                         overflow: 'auto',
+                        overflowX:"hidden",
                         padding: ' 0 10px'
                     }}
                 >
@@ -78,10 +79,10 @@ export default function Patientdetail(props) {
                             alignItems: "center",
                             padding: "10px"
                         }}>
-                            <Grid item xs={2}>
+                            <Grid item xs={5} sm={4} md={3} lg={2}>
                                 <img className='patient-detail-img' src={require('../../images/person.jpg')} alt='personImg' />
                             </Grid>
-                            <Grid item xs={5}>
+                            <Grid item xs={7} sm={4} md={3} lg={3}>
                                 <h6><strong>Abhsihek patil</strong></h6>
                                 <p>London, UK ( GMT+05:30 )</p>
                             </Grid>
@@ -169,7 +170,7 @@ export default function Patientdetail(props) {
                             justifyContent:"space-between",    
                             alignItems:"center",
                         }}>
-                            <Grid item xs={12}  md={6}>
+                            <Grid item xs={11}  md={6}>
                                  <Chart  data={data} options={options}/>
                             </Grid>
                             <Grid item xs={12}  md={5} >

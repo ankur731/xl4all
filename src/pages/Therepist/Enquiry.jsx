@@ -39,19 +39,17 @@ export default function Enquiry(props) {
                 mb: 4,
                 backgroundColor: "#fff",
                 borderRadius: '10px',
-                padding: "25px 0",
+                padding: "25px 10px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 flexDirection: "column",
                 gap: "30px 0"
             }}>
-                <EnquiryCard admin="true"/>
-                <EnquiryCard admin="true"/>
-                <EnquiryCard admin="true"/>
-                <EnquiryCard admin="true"/>
-              
-
+                <EnquiryCard admin={props.pov==="admin"}/>
+                <EnquiryCard admin={props.pov==="admin"}/>
+                <EnquiryCard admin={props.pov==="admin"}/>
+                <EnquiryCard admin={props.pov==="admin"}/>
 
             </Container>
 

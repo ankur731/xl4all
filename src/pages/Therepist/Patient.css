@@ -21,3 +21,18 @@
     padding: 7px 30px;
     color: #fff;
 }
+@media (max-width:1200px) {
+    .patientImg{
+        height: 170px;
+    }
+}
+@media (max-width:920px) {
+    .patientImg{
+        height: 160px;
+    }
+}
+@media (max-width:574px) {
+    .patientImg{
+        height: 130px;
+    }
+}

@@ -9,6 +9,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import Chart from '../../components/patient/Chart';
+import DashboardSkeleton from './DashboardSkeleton';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
@@ -62,6 +65,14 @@ const data = {
 
 export default function TherepistDashboard() {
 
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        },2500)
+    })
+
     return (
         <Box
         component="main"
@@ -73,10 +84,13 @@ export default function TherepistDashboard() {
             overflowX:"hidden"
         }}
     >
-        <Toolbar />
-        <Container maxWidth="xxl" sx={{ mt: 4, mb: 4 }}>
+            <Toolbar />
+            {loading ?
+                <DashboardSkeleton /> :
+                <>
+             <Container maxWidth="xxl" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} md={4} lg={3}>
+                <Grid item xs={12} sm={6}  lg={3}>
                     <Paper
                         sx={{
                             p: 2,
@@ -90,7 +104,7 @@ export default function TherepistDashboard() {
                         <h5 style={{ "textAlign": 'center' }}>25</h5>
                     </Paper>
                 </Grid>
-                <Grid item xs={12} md={4} lg={3}>
+                <Grid item xs={12} sm={6}  lg={3}>
                     <Paper
                         sx={{
                             p: 2,
@@ -105,7 +119,7 @@ export default function TherepistDashboard() {
                     </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={4} lg={3}>
+                <Grid item xs={12} sm={6} lg={3}>
                     <Paper
                         sx={{
                             p: 2,
@@ -120,7 +134,7 @@ export default function TherepistDashboard() {
                     </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={4} lg={3}>
+                <Grid item xs={12} sm={6}  lg={3}>
                     <Paper
                         sx={{
                             p: 2,
@@ -141,19 +155,16 @@ export default function TherepistDashboard() {
         overflowX:"hidden"}}>
             <h5>Upcoming appointment</h5>
             <Grid container spacing={1} mt={2} sx={{
-                 // maxWidth:'920px',
-                            // width:"70vw"
+               
                             display:"flex",
                             justifyContent:"center",
                             alignItems: "center"
             }}>
-                <Grid item xs={12} sm={12} md={8}>
-
+                <Grid item xs={12} sm={12} md={11} lg={8} xl={7} xxl={6}>
+                
 
                     <Grid item sx={{
-                        // padding:"10px 0",
-                        //  border:"1px solid #f5f5f7",
-                        //  borderRadius:"6px"
+                       
                     }}>
                         <AppointmentCard status="upcoming" />
                     </Grid>
@@ -175,23 +186,30 @@ export default function TherepistDashboard() {
                    
 
                 </Grid>
-                <Grid item sm={12} md={4} sx={{
-                     display: "flex",
-                    flexDirection:"column",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    gap:"15px 0"
-                }}>
-                    {/* <Calendar className="dashboardCalender" onChange={(d) => setDate(d)} /> */}
-                   <div style={{border:"3px solid #f5f5f7"}}>
-                        <BasicDateCalendar/>
-                   </div>
+                <Grid item sm={12} md={12} lg={4} xl={5} xxl={6} sx={{
+                                display: "flex",
+                                flexDirection:"column",
+                                justifyContent: "flex-start",
+                                alignItems:"flex-start",
+                                gap:"15px 0",
+                                
+                            }}>
+                    <div style={{width:"100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                               <div style={{border:"3px solid #f5f5f7"}}>
+                                    <BasicDateCalendar/>
+                               </div>
+                               </div>
+                           
                     <Chart data={data} options={options}/>
+           
                 </Grid>
 
             </Grid>
 
-        </Container>
+                    </Container> 
+                    </>
+            
+            }
 
     </Box>
     );

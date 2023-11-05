@@ -153,33 +153,37 @@ const ActivityPage = (props) => {
                                                                     </AccordionHeader>
                                                                     <AccordionBody >
                                                                         <div className="activity-content">
-                                                                        <h5>Session By :</h5>
-                                                                        {props.who==="therepist"?
-                                                                        <p>Dr. Abhinav sharma</p>:
-                                                                        <input type="text" />
-                                                                        }
+                                                                            <h5>Session By :</h5>
+                                                                            {props.who === "therepist" ?
+                                                                                <p>Dr. Abhinav sharma</p> :
+                                                                                <input type="text" />
+                                                                            }<br /><br />
                                                                             <button className="sessionRecordingBtn">Session Recording</button>
                                                                             <div className="tipsDiv">
                                                                                 <h5>Three tips for dialy routine</h5>
-                                                                               {props.who==="therepist"?<ul>
+                                                                                {props.who === "therepist" ? <ul>
                                                                                     <li>Lorem ipsum dolor sit amet.</li>
                                                                                     <li>Lorem ipsum dolor sit amet.</li>
                                                                                     <li>Lorem ipsum dolor sit amet.</li>
-                                                                                </ul>:
-                                                                                <>
-                                                                                <div className="tip" >
-                                                                                    <label>Tip 1</label>
-                                                                                    <input type="text" />
-                                                                                </div>
-                                                                                <div className="tip">
-                                                                                    <label>Tip 2</label>
-                                                                                    <input type="text" />
-                                                                                </div>
-                                                                                <div className="tip">
-                                                                                    <label>Tip 3</label>
-                                                                                    <input type="text" />
-                                                                                </div>
-                                                                                </>
+                                                                                </ul> :
+                                                                                    <>
+                                                                                    <div className="row mt-3 mb-3">
+                                                                                            <div className="col-md-12"><label className="labels"  style={{fontSize:"15px"}}>Tip 1</label><input type="text" className="form-control" placeholder="06" value="" /></div>
+                                                                                            <div className="col-md-12"><label className="labels"  style={{fontSize:"15px"}}>Tip 2</label><input type="text" className="form-control" placeholder="English" value="" /></div>
+                                                                                            <div className="col-md-12"><label className="labels"  style={{fontSize:"15px"}}>Tip 3</label><input type="text" className="form-control" placeholder="9988XXXXXX" value="" /></div>
+                                                                                    </div>
+                                                                                    <h5>Assign Activities</h5>
+                                                                                        <div className="row mt-3 mb-3">
+                                                                                            <div className="col-md-12"><label className="labels" style={{fontSize:"15px"}}>Activity 1</label><input type="text" className="form-control" placeholder="activity" value="" /></div>
+                                                                                            <div className="col-md-12"><label className="labels" style={{fontSize:"15px"}}>Activity 2</label><input type="text" className="form-control" placeholder="activity" value="" /></div>
+                                                                                            <div className="col-md-12"><label className="labels" style={{fontSize:"15px"}}>Activity 3</label><input type="text" className="form-control" placeholder="activity" value="" /></div>
+                                                                                            <div className="col-md-12"><label className="labels" style={{fontSize:"15px"}}>Activity 4</label><input type="text" className="form-control" placeholder="activity" value="" /></div>
+                                                                                            <div className="col-md-12"><label className="labels" style={{fontSize:"15px"}}>Activity 5</label><input type="text" className="form-control" placeholder="activity" value="" /></div>
+                                                                                        </div>
+                                                                                        {/* <div className="row"> */}
+                                                                                            <button type="button" className="btn btn-success">Update</button>
+                                                                                        {/* </div> */}
+                                                                                    </>
                                                                                 }
                                                                             </div>
                                                                             <table>
@@ -209,7 +213,7 @@ const ActivityPage = (props) => {
                                                                                         <th className="trial2">T 2</th>
                                                                                         <th className="trial1">T 1</th>
                                                                                         <th className="trial2">T 2</th>
-                                                                                       
+
                                                                                     </tr>
                                                                                 </thead>
                                                                                 <tbody>
@@ -224,10 +228,10 @@ const ActivityPage = (props) => {
                                                                                                         key={`activity_${monthIndex}_${weekIndex}_${activityIndex}_day_${dayIndex}`}
                                                                                                     >
                                                                                                         {/* FOR TRIAL ONE */}
-                                                                                                        <td 
+                                                                                                        <td
                                                                                                             key={`activity_${monthIndex}_${weekIndex}_${activityIndex}_day_${dayIndex}_trial_0`}
                                                                                                         >
-                                                                                                            <select style={{ outline:"none"}}
+                                                                                                            <select style={{ outline: "none" }}
                                                                                                                 value={dayData.trials[0]}
                                                                                                                 onChange={(e) =>
                                                                                                                     handleCellChange(
@@ -246,16 +250,16 @@ const ActivityPage = (props) => {
                                                                                                                 <option value="none" disabled hidden>
                                                                                                                     -
                                                                                                                 </option>
-                                                                                                                <option  value="not attempted">NA</option>
-                                                                                                                <option style={{color:"red"}} value="attempted">A</option>
-                                                                                                                <option style={{color:"green"}} value="success">S</option>
+                                                                                                                <option value="not attempted">NA</option>
+                                                                                                                <option style={{ color: "red" }} value="attempted">A</option>
+                                                                                                                <option style={{ color: "green" }} value="success">S</option>
                                                                                                             </select>
                                                                                                         </td>
                                                                                                         {/* FOR TRIAL TWO */}
                                                                                                         <td
                                                                                                             key={`activity_${monthIndex}_${weekIndex}_${activityIndex}_day_${dayIndex}_trial_1`}
                                                                                                         >
-                                                                                                            <select style={{ outline:"none"}}
+                                                                                                            <select style={{ outline: "none" }}
                                                                                                                 value={dayData.trials[1]}
                                                                                                                 onChange={(e) =>
                                                                                                                     handleCellChange(
@@ -275,8 +279,8 @@ const ActivityPage = (props) => {
                                                                                                                     -
                                                                                                                 </option>
                                                                                                                 <option value="not attempted">NA</option>
-                                                                                                                <option style={{color:"red"}} value="attempted">A</option>
-                                                                                                                <option style={{color:"green"}} value="success">S</option>
+                                                                                                                <option style={{ color: "red" }} value="attempted">A</option>
+                                                                                                                <option style={{ color: "green" }} value="success">S</option>
                                                                                                             </select>
                                                                                                         </td>
                                                                                                         {/* ))} */}
@@ -295,34 +299,34 @@ const ActivityPage = (props) => {
                                                                                                         }
                                                                                                     >
                                                                                                         Instructions
-                                                                                                    </Link> : <input  type="file" />}
+                                                                                                    </Link> : <input type="file" />}
                                                                                             </tr>
                                                                                         )
                                                                                     )}
                                                                                 </tbody>
                                                                             </table>
                                                                             <div className="uploadVideoDiv">
-                                                                               {props.who==="therepist"?
-                                                                               <div>
-                                                                                    <h5>Upload Video <span> *(On Day 3) </span></h5>
-                                                                                    <input type="file" />
-                                                                                    <div style={{marginTop:"15px"}}>
-                                                                                    <h6 style={{fontWeight:"bold"}}>Therapist Review</h6>
-                                                                                    <p> lorem ipsum it's a feedback by therepist lorem ipsum it's a feedback by therepist</p>
+                                                                                {props.who === "therepist" ?
+                                                                                    <div>
+                                                                                        <h5>Upload Video <span> *(On Day 3) </span></h5>
+                                                                                        <input type="file" />
+                                                                                        <div style={{ marginTop: "15px" }}>
+                                                                                            <h6 style={{ fontWeight: "bold" }}>Therapist Review</h6>
+                                                                                            <p> lorem ipsum it's a feedback by therepist lorem ipsum it's a feedback by therepist</p>
+                                                                                        </div>
+                                                                                    </div> :
+                                                                                    <div>
+                                                                                        <h5>Uploaded Video by patient <span> *(On Day 3) </span></h5>
+                                                                                        <button className="btn btn-success">View Video</button>
+                                                                                        <div style={{ marginTop: "15px" }}>
+                                                                                            <h6 style={{ fontWeight: "bold" }}>Therapist Review</h6>
+                                                                                            <textarea style={{ width: "98%", height: "100px", padding: "10px 15px" }}></textarea>                                                                                    </div>
+
+
                                                                                     </div>
-                                                                                </div>:
-                                                                                <div>
-                                                                                <h5>Uploaded Video by patient <span> *(On Day 3) </span></h5>
-                                                                                    <button className="btn btn-success">View Video</button>
-                                                                                    <div style={{marginTop:"15px"}}>
-                                                                                    <h6 style={{fontWeight:"bold"}}>Therapist Review</h6>
-                                                                                    <textarea style={{width:"98%", height:"100px", padding:"10px 15px"}}></textarea>                                                                                    </div>
-                                                                                    
-                                                                                    
-                                                                                </div>
                                                                                 }
-                                                                                
-                                                                                
+
+
                                                                             </div>
                                                                         </div>
                                                                     </AccordionBody>

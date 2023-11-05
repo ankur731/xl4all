@@ -75,7 +75,7 @@ const data = {
                 
                 mt: 4,
                 mb: 4,
-            }}>
+            }}> 
                     <h4>My Progress</h4>
                     <Grid container mt={4} sx={{
                          backgroundColor: "#fff",
@@ -86,7 +86,7 @@ const data = {
 
                     </Grid>
 
-                    <Grid item lg="6">
+                    <Grid  item xs={12} lg="6">
                     <Chart data={data} options={options}/>
                     </Grid>
             </Container>

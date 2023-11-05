@@ -12,6 +12,7 @@ import { TimePicker } from 'antd';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import "./Calender.css"
 
 export function BasicDateCalendar() {
     return (
@@ -24,6 +25,12 @@ export function BasicDateCalendar() {
 const myStyle = {
     closeIcon:{
         cursor:"pointer"
+    },
+    calender:{
+        display:"flex",
+       
+        justifyContent:"center",
+        alignItems:"center"
     }
 }
 export default function TherepistCalender() {
@@ -107,15 +114,15 @@ export default function TherepistCalender() {
 
         }}>
                     <h5>Add your slot timing</h5>
-            <Grid container spacing={2}  sx={{ justifyContent: 'center', padding: 2 }}>
-                <Grid item sm={0} md={1}>
+            <Grid container className='calenderContainer' sm={12}  spacing={2}  sx={{ padding: 2 }}>
+                {/* <Grid item sm={0} md={1}>
                 
-                </Grid>
-                <Grid item xs={12} sm={10} md={5}>
+                </Grid> */}
+                <Grid item xs={12} sm={10} md={6} >
                     <Calendar value={date} onChange={(d) => calenderChange(d)} />
                     {/* <BasicDateCalendar value={date} onChange={(d) => calenderChange(d)} /> */}
                 </Grid>
-                <Grid item xs={12} sm={10} md={6} >
+                <Grid item xs={12} sm={10} md={6}>
                   
                        <Grid item>
                        {/* <TimeRange

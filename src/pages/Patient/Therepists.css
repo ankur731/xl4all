@@ -1,10 +1,14 @@
 .imgDiv{
-    width: 250px;
+    /* width: 250px; */
+    
 }
-.imgDiv img{
+/* .imgDiv img{
     width: 100%;
     aspect-ratio: 1/1;
-    /* max-height: 250px; */
+   
     max-width: 250px;
     border-radius: 50%;
 }
+.therepistImg{
+
+} */

@@ -17,7 +17,7 @@ export default function Patients(props) {
     if(props.admin){
       navigate('/admin/patient/patient-detail');
     } else {
-      navigate('therepist/patient/patient-detail');
+      navigate('/therepist/patient/patient-detail');
     }
   };
   
@@ -39,7 +39,7 @@ export default function Patients(props) {
     <Toolbar />
     <Container maxWidth="xl" sx={{ 
                   mt:4,
-                  mb:4
+                  mb:4,
               }}>
                   <div>
                       <h5 style={{fontWeight:"600"}}>Patient List</h5>
@@ -51,7 +51,7 @@ export default function Patients(props) {
       mb: 4, 
       backgroundColor:"#fff",
       borderRadius:'10px',
-      padding:"15px 0 10px 0"
+      padding:"15px 0 10px 10px"
      }}>
       <Grid container spacing={2} sx={{justifyContent:'center'}}>
 
@@ -60,7 +60,7 @@ export default function Patients(props) {
           alignItems:'center',
           justifyContent:'center'
         }}>
-          <Grid item xs={6} sm={4} md={6}>
+          <Grid item xs={5} sm={4} md={6}>
             <img className='patientImg' src={require("../../images/person.jpg")} alt='ptientImg' />
           </Grid>
           <Grid item xs={6} >
@@ -73,7 +73,7 @@ export default function Patients(props) {
           alignItems:'center',
           justifyContent:'center'
         }}>
-          <Grid item xs={6} sm={4} md={6}>
+          <Grid item xs={5} sm={4} md={6}>
             <img className='patientImg' src={require("../../images/person.jpg")} alt='ptientImg' />
           </Grid>
           <Grid item xs={6}>
@@ -91,7 +91,7 @@ export default function Patients(props) {
           alignItems:'center',
           justifyContent:'center'
         }}>
-          <Grid item xs={6} sm={4} md={6}>
+          <Grid item xs={5} sm={4} md={6}>
             <img className='patientImg' src={require("../../images/person.jpg")} alt='ptientImg' />
           </Grid>
           <Grid item xs={6} >
@@ -104,7 +104,7 @@ export default function Patients(props) {
           alignItems:'center',
           justifyContent:'center'
         }}>
-          <Grid item xs={6} sm={4} md={6}>
+          <Grid item xs={5} sm={4} md={6}>
             <img className='patientImg' src={require("../../images/person.jpg")} alt='ptientImg' />
           </Grid>
           <Grid item xs={6}>
@@ -122,7 +122,7 @@ export default function Patients(props) {
           alignItems:'center',
           justifyContent:'center'
         }}>
-          <Grid item xs={6} sm={4} md={6}>
+          <Grid item xs={5} sm={4} md={6}>
             <img className='patientImg' src={require("../../images/person.jpg")} alt='ptientImg' />
           </Grid>
           <Grid item xs={6} >
@@ -135,7 +135,7 @@ export default function Patients(props) {
           alignItems:'center',
           justifyContent:'center'
         }}>
-          <Grid item xs={6} sm={4} md={6}>
+          <Grid item xs={5} sm={4} md={6}>
             <img className='patientImg' src={require("../../images/person.jpg")} alt='ptientImg' />
           </Grid>
           <Grid item xs={6}>

@@ -1,0 +1,80 @@
+.mission-section{
+    width: 100%;
+    position: relative;
+    background-color: #fdf5f2;
+    padding: 0 15px;
+}
+
+.mission{
+    padding: 40px 0;
+    padding-top: 20px;
+}
+@media (max-width:576px) {
+    .mission{
+        padding: 40px 0px;
+    }
+}
+.mission>h1{
+    font-size: 48px;
+}
+.mission>p{
+    font-size: 20px;
+    text-align: left;
+    color: #353535;
+}
+@media (max-width:992px) {
+    .mission>h1{
+        font-size: 36px;
+    }
+    .mission>p{
+        font-size: 18px;
+    }
+}
+@media (max-width:576px) {
+    .mission>h1{
+        font-size: 28px;
+    }
+    .mission>p{
+        font-size: 16px;
+    }
+}
+.vision-card{
+    border: none !important;
+    background-color: transparent !important;
+    padding: 15px 0;
+
+}
+.vision-card>h3{
+    text-align: left;  
+    font-size: 22px; 
+}
+.vision-content>p{
+    text-align: left;
+    font-size: 18px;
+}
+@media (max-width:576px) {
+    .vision-card>h3{
+        font-size: 20px; 
+    }
+    .vision-content>p{
+        font-size: 16px;
+    }
+}
+.vision-content{
+    border-top: 1px solid #474747;
+    padding: 10px 0;
+}
+.mission-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.mission-img>img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(80%);
+}
+.mission{
+    position: relative;
+    color: #111;
+}

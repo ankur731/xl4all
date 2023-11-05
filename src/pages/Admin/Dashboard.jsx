@@ -146,7 +146,7 @@ export default function AdminDashboard() {
             <Toolbar />
             <Container maxWidth="xxl" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} lg={3}>
                         <Paper
                             sx={{
                                 p: 2,
@@ -160,7 +160,7 @@ export default function AdminDashboard() {
                             <h5 style={{ "textAlign": 'center' }}>255</h5>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} lg={3}>
                         <Paper
                             sx={{
                                 p: 2,
@@ -175,7 +175,7 @@ export default function AdminDashboard() {
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={12} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} lg={3}>
                         <Paper
                             sx={{
                                 p: 2,
@@ -190,7 +190,7 @@ export default function AdminDashboard() {
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={12} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} lg={3}>
                         <Paper
                             sx={{
                                 p: 2,
